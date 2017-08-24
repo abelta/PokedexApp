@@ -1,0 +1,24 @@
+{
+  "extends": ["airbnb"],
+  "installedESLint": true,
+  "parser": "babel-eslint",
+  "globals": {
+    "jest": true
+  },
+  "plugins": [
+    "react",
+    "react-native"
+  ],
+  "env": {
+    "jasmine": true
+  },
+  "ecmaFeatures": {
+    "jsx": true
+  },
+  "rules": {
+    "import/prefer-default-export": "off",
+    "jsx-a11y/href-no-hash": "off",
+    "jsx-a11y/anchor-is-valid": ["warn", { "aspects": ["invalidHref"] }],
+    "react/jsx-filename-extension": "off"
+  }
+}

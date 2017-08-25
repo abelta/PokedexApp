@@ -3,7 +3,8 @@
   "installedESLint": true,
   "parser": "babel-eslint",
   "globals": {
-    "jest": true
+    "jest": true,
+    "fetch": false
   },
   "plugins": [
     "react",

@@ -1,15 +1,20 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { createStore } from 'redux';
+import { Text, View } from 'react-native';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import reducer from './Reducers'; 
+import createSagaMiddleware from 'redux-saga';
 import { Link, NativeRouter, Route, Switch } from 'react-router-native';
+import reducers from './Reducers';
+import sagas from './Sagas';
 import { Title } from './Components/Layout';
 import SearchBar from './Components/SearchBar';
 import PokemonDetail from './Containers/PokemonDetail';
 import InfiniteList from './Containers/InfiniteList';
 
-let store = createStore(reducer);
+const sagaMiddleware = createSagaMiddleware();
+const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+
+sagaMiddleware.run(sagas);
 
 const App = () => (
   <Provider store={store}>
@@ -37,14 +42,5 @@ const App = () => (
     </View>
   </Provider>
 );
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
 
 export default App;

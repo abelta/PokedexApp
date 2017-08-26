@@ -1,8 +1,9 @@
 import React from 'react';
-import { Text, View } from 'react-native';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
+import { composeWithDevTools } from 'remote-redux-devtools';
+import { Text, View } from 'react-native';
 import { Link, NativeRouter, Route, Switch } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
@@ -12,7 +13,8 @@ import PokemonDetail from './Containers/PokemonDetail';
 import InfiniteList from './Containers/InfiniteList';
 
 const sagaMiddleware = createSagaMiddleware();
-const store = createStore(reducers, applyMiddleware(sagaMiddleware));
+const composeEnhancers = composeWithDevTools({ realtime: true });
+const store = createStore(reducers, composeEnhancers(applyMiddleware(sagaMiddleware)));
 
 sagaMiddleware.run(sagas);
 

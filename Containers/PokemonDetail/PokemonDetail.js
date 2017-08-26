@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
-import { pokemonDetailParams } from '../../PropTypes';
+import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 
 class PokemonDetail extends Component {
@@ -13,11 +13,13 @@ class PokemonDetail extends Component {
   }
 
   render() {
-    const { match } = this.props;
+    const { match, pokemon } = this.props;
     return (
       <View>
         <Text>POKEMON DETAIL</Text>
         <Text>{match.params.id}</Text>
+        <Text>NAME</Text>
+        <Text>{pokemon.name}</Text>
       </View>
     );
   }
@@ -26,10 +28,8 @@ class PokemonDetail extends Component {
 PokemonDetail.propTypes = {
   getPokemon: PropTypes.func.isRequired,
   match: pokemonDetailParams.isRequired,
-};
-
-PokemonDetail.defaultProps = {
-  match: { params: { id: 1 } },
+  pokemon: pokemonType.isRequired,
+  // pokemon: pokemonType,
 };
 
 const mapStateToProps = state => ({

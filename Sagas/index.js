@@ -1,8 +1,8 @@
 import { spawn } from 'redux-saga/effects';
 import pokemon from './pokemon';
 
-const saga = function* saga() {
+const sagas = function* saga() {
   yield spawn(pokemon);
 };
 
-export default saga;
+export default sagas;

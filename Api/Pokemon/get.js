@@ -1,4 +1,4 @@
-import { checkStatus, parseJson } from '../../Helpers/fetch';
+import { checkStatus, parseJson } from '../../Helpers/Fetch';
 
 const get = ({ id }) => (
   fetch(`http://pokeapi.co/api/v2/pokemon/${id}`)

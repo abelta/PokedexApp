@@ -1,10 +1,16 @@
 import { combineReducers } from 'redux';
-import pokemonDetail from './pokemonDetail';
-import pokemonIndex from './pokemonIndex';
+import { pokemonList, pokemonDetail } from './Containers';
+import { pokemon, pokemonIndex } from './Entities';
 
-const reducer = combineReducers({
-  pokemonDetail,
-  pokemonIndex,
+const reducers = combineReducers({
+  containers: combineReducers({
+    pokemonList,
+    pokemonDetail,
+  }),
+  entities: combineReducers({
+    pokemon,
+    pokemonIndex,
+  }),
 });
 
-export default reducer;
+export default reducers;

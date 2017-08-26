@@ -9,7 +9,7 @@ const getSent = function* getSent(action) {
     const pokemon = yield call(getApi, { id });
     yield put(getSucceeded({ pokemon }));
   } catch (e) {
-    yield put(getFailed({ id }));
+    yield put(getFailed({ id, message: e.message }));
   }
 };
 

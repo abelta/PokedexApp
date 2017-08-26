@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Text, View } from 'react-native';
+import { ActivityIndicator, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
+import { Error } from '../../Components/Layout';
+import PokemonCard from '../../Components/PokemonCard';
 
 class PokemonDetail extends Component {
 
@@ -13,27 +15,29 @@ class PokemonDetail extends Component {
   }
 
   render() {
-    const { match, pokemon } = this.props;
+    const { error, loading, pokemon } = this.props;
     return (
       <View>
         <Text>POKEMON DETAIL</Text>
-        <Text>{match.params.id}</Text>
-        <Text>NAME</Text>
-        <Text>{pokemon.name}</Text>
+        {loading && <ActivityIndicator size="large" />}
+        {error && <Error>{error}</Error>}
+        {pokemon && <PokemonCard pokemon={pokemon} />}
       </View>
     );
   }
 }
 
 PokemonDetail.propTypes = {
+  error: PropTypes.oneOf([PropTypes.string, PropTypes.bool]).isRequired,
   getPokemon: PropTypes.func.isRequired,
+  loading: PropTypes.bool.isRequired,
   match: pokemonDetailParams.isRequired,
-  pokemon: pokemonType.isRequired,
-  // pokemon: pokemonType,
+  pokemon: PropTypes.oneOf([pokemonType, PropTypes.bool]).isRequired,
 };
 
 const mapStateToProps = state => ({
-  pokemon: state.pokemonDetail,
+  error: state.containers.pokemonDetail.error,
+  loading: state.containers.pokemonDetail.loading,
 });
 
 const mapDispatchToProps = dispatch => ({

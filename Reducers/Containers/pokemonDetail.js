@@ -1,19 +1,21 @@
 import * as types from '../../Actions/actionTypes';
 
 const initialState = {
+  error: false,
   loading: false,
 };
 
 const pokemonDetailReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.POKEMON_GET_SENT: {
-      return { ...state, loading: true };
+      return { ...state, error: false, loading: true };
     }
     case types.POKEMON_GET_SUCCEEDED: {
-      return { ...state, loading: false };
+      return { ...state, error: false, loading: false };
     }
     case types.POKEMON_GET_FAILED: {
-      return { ...state, loading: false };
+      const { error } = action.payload;
+      return { ...state, error, loading: false };
     }
     default: return state;
   }

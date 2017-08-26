@@ -10,7 +10,7 @@ import sagas from './Sagas';
 import { Title } from './Components/Layout';
 import SearchBar from './Components/SearchBar';
 import PokemonDetail from './Containers/PokemonDetail';
-import InfiniteList from './Containers/InfiniteList';
+import PokemonList from './Containers/PokemonList';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = composeWithDevTools({ realtime: true });
@@ -35,7 +35,7 @@ const App = () => (
               <Link to="/pokemon/1"><Text>Bulbasaur</Text></Link>
             </View>
             <Switch>
-              <Route path="/" component={InfiniteList} exact />
+              <Route path="/" component={PokemonList} exact />
               <Route path="/pokemon/:id" component={PokemonDetail} />
             </Switch>
           </View>

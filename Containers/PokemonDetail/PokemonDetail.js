@@ -4,14 +4,15 @@ import { ActivityIndicator, Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
+import { selectPokemon } from '../../Selectors/Pokemon';
 import { Error } from '../../Components/Layout';
 import PokemonCard from '../../Components/PokemonCard';
 
 class PokemonDetail extends Component {
 
   componentWillMount() {
-    const { getPokemon, match: { params: { id } } } = this.props;
-    getPokemon(id);
+    const { getPokemon, match: { params: { id } }, pokemon } = this.props;
+    if (!pokemon) getPokemon(id);
   }
 
   render() {
@@ -35,9 +36,10 @@ PokemonDetail.propTypes = {
   pokemon: PropTypes.oneOf([pokemonType, PropTypes.bool]).isRequired,
 };
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state, props) => ({
   error: state.containers.pokemonDetail.error,
   loading: state.containers.pokemonDetail.loading,
+  pokemon: selectPokemon(state, props.match.params.id),
 });
 
 const mapDispatchToProps = dispatch => ({

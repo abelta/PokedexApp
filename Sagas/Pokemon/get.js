@@ -1,8 +1,8 @@
 import { call, put, spawn, takeLatest } from 'redux-saga/effects';
 import camelcaseKeys from 'camelcase-keys';
-import * as types from '../Actions/actionTypes';
-import { getSucceeded, getFailed } from '../Actions/Pokemon';
-import { get as getApi } from '../Api/Pokemon';
+import * as types from '../../Actions/actionTypes';
+import { getSucceeded, getFailed } from '../../Actions/Pokemon';
+import { get as getApi } from '../../Api/Pokemon';
 
 const getSent = function* getSent(action) {
   const { id } = action.payload;
@@ -18,8 +18,8 @@ const getSentSaga = function* getSentSaga() {
   yield takeLatest(types.POKEMON_GET_SENT, getSent);
 };
 
-const pokemonSaga = function* pokemonSaga() {
+const getSaga = function* getSaga() {
   yield spawn(getSentSaga);
 };
 
-export default pokemonSaga;
+export default getSaga;

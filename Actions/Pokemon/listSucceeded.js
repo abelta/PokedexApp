@@ -1,8 +1,8 @@
 import * as types from '../actionTypes';
 
-const indexSucceeded = ({ pokemon }) => ({
+const indexSucceeded = ({ offset, pokemon }) => ({
   type: types.POKEMON_INDEX_SUCCEEDED,
-  payload: { pokemon },
+  payload: { offset, pokemon },
 });
 
 export default indexSucceeded;

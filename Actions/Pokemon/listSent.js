@@ -1,5 +1,8 @@
 import * as types from '../actionTypes';
 
-const indexSent = () => ({ type: types.POKEMON_INDEX_SENT });
+const indexSent = ({ offset }) => ({
+  type: types.POKEMON_INDEX_SENT,
+  payload: { offset },
+});
 
 export default indexSent;

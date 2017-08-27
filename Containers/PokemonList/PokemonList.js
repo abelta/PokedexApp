@@ -1,6 +1,12 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { Text } from 'react-native';
 
-const PokemonList = () => <Text>POKEMON LIST</Text>;
+class PokemonList extends Component {
+  render() {
+    return (
+      <Text>POKEMON LIST</Text>
+    );
+  }
+}
 
 export default PokemonList;

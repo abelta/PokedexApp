@@ -7,7 +7,7 @@ import { get as getApi } from '../Api/Pokemon';
 const getSent = function* getSent(action) {
   const { id } = action.payload;
   try {
-    const pokemon = camelcaseKeys(yield call(getApi, { id }));
+    const pokemon = camelcaseKeys(yield call(getApi, { id }), { deep: true });
     yield put(getSucceeded({ pokemon }));
   } catch (e) {
     yield put(getFailed({ id, message: e.message }));

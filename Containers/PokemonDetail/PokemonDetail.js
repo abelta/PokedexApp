@@ -29,17 +29,17 @@ class PokemonDetail extends Component {
 }
 
 PokemonDetail.propTypes = {
-  error: PropTypes.oneOf([PropTypes.string, PropTypes.bool]).isRequired,
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.bool]).isRequired,
   getPokemon: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   match: pokemonDetailParams.isRequired,
-  pokemon: PropTypes.oneOf([pokemonType, PropTypes.bool]).isRequired,
+  pokemon: PropTypes.oneOfType([pokemonType, PropTypes.bool]).isRequired,
 };
 
 const mapStateToProps = (state, props) => ({
   error: state.containers.pokemonDetail.error,
   loading: state.containers.pokemonDetail.loading,
-  pokemon: selectPokemon(state, props.match.params.id),
+  pokemon: selectPokemon(state, props.match.params.id) || false,
 });
 
 const mapDispatchToProps = dispatch => ({

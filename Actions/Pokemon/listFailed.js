@@ -1,8 +1,8 @@
 import * as types from '../actionTypes';
 
-const indexFailed = ({ message }) => ({
-  type: types.POKEMON_INDEX_FAILED,
+const listFailed = ({ message }) => ({
+  type: types.POKEMON_LIST_FAILED,
   payload: { message },
 });
 
-export default indexFailed;
+export default listFailed;

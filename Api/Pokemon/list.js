@@ -7,6 +7,7 @@ const list = ({ offset }) => (
     .then(checkStatus)
     .then(parseJson)
     .then(response => response.results)
+    .then(response => response.map(result => ({ name: result.name })))
 );
 
 export default list;

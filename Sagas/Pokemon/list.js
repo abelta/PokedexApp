@@ -6,8 +6,8 @@ import { list as listApi } from '../../Api/Pokemon';
 const listSent = function* listSent(action) {
   const { offset } = action.payload;
   try {
-    const pokemon = yield call(listApi, { offset });
-    yield put(listSucceeded({ offset, pokemon }));
+    const list = yield call(listApi, { offset });
+    yield put(listSucceeded({ offset, list }));
   } catch (e) {
     yield put(listFailed({ message: e.message }));
   }

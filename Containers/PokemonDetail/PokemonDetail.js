@@ -9,7 +9,6 @@ import { Error } from '../../Components/Layout';
 import PokemonCard from '../../Components/PokemonCard';
 
 class PokemonDetail extends Component {
-
   componentWillMount() {
     const { getPokemon, match: { params: { id } }, pokemon } = this.props;
     if (!pokemon) getPokemon(id);
@@ -39,7 +38,7 @@ PokemonDetail.propTypes = {
 const mapStateToProps = (state, props) => ({
   error: state.containers.pokemonDetail.error,
   loading: state.containers.pokemonDetail.loading,
-  pokemon: selectPokemon(state, props.match.params.id) || false,
+  pokemon: selectPokemon(state, props.match.params.id),
 });
 
 const mapDispatchToProps = dispatch => ({

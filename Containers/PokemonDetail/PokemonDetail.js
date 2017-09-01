@@ -10,8 +10,8 @@ import PokemonCard from '../../Components/PokemonCard';
 
 class PokemonDetail extends Component {
   componentWillMount() {
-    const { getPokemon, match: { params: { id } }, pokemon } = this.props;
-    if (!pokemon) getPokemon(id);
+    const { getPokemon, match: { params: { id: name } }, pokemon } = this.props;
+    if (!pokemon) getPokemon(name);
   }
 
   render() {
@@ -42,7 +42,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  getPokemon: id => dispatch(pokemonGetSent({ id })),
+  getPokemon: name => dispatch(pokemonGetSent({ name })),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetail);

@@ -5,12 +5,12 @@ import { getSucceeded, getFailed } from '../../Actions/Pokemon';
 import { get as getApi } from '../../Api/Pokemon';
 
 const getSent = function* getSent(action) {
-  const { id } = action.payload;
+  const { name } = action.payload;
   try {
-    const pokemon = camelcaseKeys(yield call(getApi, { id }), { deep: true });
+    const pokemon = camelcaseKeys(yield call(getApi, { name }), { deep: true });
     yield put(getSucceeded({ pokemon }));
   } catch (e) {
-    yield put(getFailed({ id, message: e.message }));
+    yield put(getFailed({ name, message: e.message }));
   }
 };
 

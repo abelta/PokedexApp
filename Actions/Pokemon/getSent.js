@@ -1,8 +1,8 @@
 import * as types from '../actionTypes';
 
-const getSent = ({ id }) => ({
+const getSent = ({ name }) => ({
   type: types.POKEMON_GET_SENT,
-  payload: { id },
+  payload: { name },
 });
 
 export default getSent;

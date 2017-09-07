@@ -7,8 +7,7 @@ import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryType } from '../../PropTypes/Pokemon';
 import ErrorModal from '../../Components/ErrorModal';
-import PokemonListEmpty from '../../Components/PokemonListEmpty';
-import PokemonListItem from '../../Components/PokemonListItem';
+import { PokemonListEmpty, PokemonListItem } from '../../Components';
 
 class PokemonList extends Component {
   constructor(props) {

@@ -7,10 +7,8 @@ import { View } from 'react-native';
 import { NativeRouter, Route, Switch } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
-import Header from './Containers/Header';
-import PokemonDetail from './Containers/PokemonDetail';
-import PokemonList from './Containers/PokemonList';
-import StatusBar from './Components/StatusBar';
+import { Header, PokemonDetail, PokemonList } from './Containers';
+import { StatusBar } from './Components';
 import styles from './styles';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -23,6 +21,7 @@ const App = () => (
   <Provider store={store}>
     <NativeRouter>
       <View style={styles.app}>
+
         <StatusBar />
         <Header style={styles.header} />
 

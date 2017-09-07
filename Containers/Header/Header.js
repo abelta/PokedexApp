@@ -1,8 +1,7 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 import { Link } from 'react-router-native';
-import AppTitle from '../../Components/AppTitle';
-import SearchBar from '../../Components/SearchBar';
+import { AppTitle, SearchBar } from '../../Components';
 import styles from './styles';
 
 const Header = () => (

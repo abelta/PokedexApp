@@ -6,7 +6,7 @@ import * as constants from '../../Constants';
 import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryType } from '../../PropTypes/Pokemon';
-import { ErrorModal } from '../../Components/Layout';
+import ErrorModal from '../../Components/ErrorModal';
 import PokemonListEmpty from '../../Components/PokemonListEmpty';
 import PokemonListItem from '../../Components/PokemonListItem';
 
@@ -14,7 +14,6 @@ class PokemonList extends Component {
   constructor(props) {
     super(props);
     this.onEndReached = this.onEndReached.bind(this);
-    this.onRefresh = this.onRefresh.bind(this);
   }
 
   componentWillMount() {
@@ -23,11 +22,6 @@ class PokemonList extends Component {
   }
 
   onEndReached() {
-    console.warn('ON END REACHED');
-  }
-
-  onRefresh() {
-    console.warn('ON REFRESH');
     const { getList, offset } = this.props;
     getList(offset + constants.POKEMON_LIST_BASE_OFFSET);
   }
@@ -37,18 +31,17 @@ class PokemonList extends Component {
     const renderItem = ({ item }) => (<PokemonListItem key={item.name} pokemonEntry={item} />);
     return (
       <View>
+        {loading && <ActivityIndicator />}
         {error && <ErrorModal>{error}</ErrorModal>}
         <FlatList
           data={pokemonIndex}
-          extraData={offset}
-          // inverted
+          extraData={{ offset }}
           renderItem={renderItem}
           keyExtractor={item => item.name}
           refreshing={loading}
-          onEndReachedThreshold={10}
+          onEndReachedThreshold={2}
           onEndReached={this.onEndReached}
-          onRefresh={this.onRefresh}
-          ListEmptyComponent={<ActivityIndicator />}
+          ListEmptyComponent={<PokemonListEmpty />}
         />
       </View>
     );

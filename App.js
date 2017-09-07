@@ -3,14 +3,15 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'remote-redux-devtools';
-import { Text, View } from 'react-native';
-import { Link, NativeRouter, Route, Switch } from 'react-router-native';
+import { View } from 'react-native';
+import { NativeRouter, Route, Switch } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
-import { Title } from './Components/Layout';
-import SearchBar from './Components/SearchBar';
+import Header from './Containers/Header';
 import PokemonDetail from './Containers/PokemonDetail';
 import PokemonList from './Containers/PokemonList';
+import StatusBar from './Components/StatusBar';
+import styles from './styles';
 
 const sagaMiddleware = createSagaMiddleware();
 const composeEnhancers = composeWithDevTools({ realtime: true });
@@ -20,28 +21,20 @@ sagaMiddleware.run(sagas);
 
 const App = () => (
   <Provider store={store}>
-    <View>
-      <View>
-        <Title>Pokédex</Title>
-        <SearchBar />
-      </View>
+    <NativeRouter>
+      <View style={styles.app}>
+        <StatusBar />
+        <Header style={styles.header} />
 
-      <View>
-        <Text>CONTENT</Text>
-        <NativeRouter>
-          <View>
-            <View>
-              <Link to="/"><Text>Home</Text></Link>
-              <Link to="/pokemon/1"><Text>Bulbasaur</Text></Link>
-            </View>
-            <Switch>
-              <Route path="/" component={PokemonList} exact />
-              <Route path="/pokemon/:id" component={PokemonDetail} />
-            </Switch>
-          </View>
-        </NativeRouter>
+        <View style={styles.container}>
+          <Switch>
+            <Route path="/" component={PokemonList} exact />
+            <Route path="/pokemon/:id" component={PokemonDetail} />
+          </Switch>
+        </View>
+
       </View>
-    </View>
+    </NativeRouter>
   </Provider>
 );
 

@@ -10,10 +10,13 @@ const SearchBar = () => (
     <TextInput
       autoCorrect={false}
       autoFocus
-      placeholder="Find Pokémon by name"
+      multiline={false}
+      placeholder="Find Pokèmon by name"
       placeholderTextColor="lightgrey"
       returnKeyType="search"
+      selectTextOnFocus
       style={styles.input}
+      underlineColorAndroid="transparent"
     />
     <View style={styles.clear}><ClearButton /></View>
   </View>

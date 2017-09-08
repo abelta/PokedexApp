@@ -2,9 +2,11 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
+    borderBottomWidth: 1,
+    borderColor: 'black',
     height: 40,
-    padding: 10,
     justifyContent: 'center',
+    padding: 10,
   },
 });
 

@@ -1,15 +1,20 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  header: {
+  titleBar: {
     backgroundColor: 'blue',
-    flexDirection: 'column',
+    flexDirection: 'row',
   },
-  appTitle: {
-
+  title: {
+    flex: 1,
+    paddingLeft: 4,
+    paddingRight: 4,
   },
-  searchBar: {
-
+  search: {
+    flex: 1,
+    justifyContent: 'center',
+    paddingLeft: 4,
+    paddingRight: 4,
   },
 });
 

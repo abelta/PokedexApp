@@ -1,10 +1,10 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  appTitle: {
-    color: 'black',
-    fontSize: 19,
-    fontWeight: 'bold',
+  header: {
+    height: 40,
+    padding: 10,
+    justifyContent: 'center',
   },
 });
 

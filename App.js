@@ -4,11 +4,11 @@ import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
 import { composeWithDevTools } from 'remote-redux-devtools';
 import { View } from 'react-native';
-import { NativeRouter, Route, Switch } from 'react-router-native';
+import { NativeRouter } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
-import { PokemonDetail, PokemonList } from './Containers';
-import { SearchBar, StatusBar, TitleBar } from './Components';
+import { Header, Container } from './Containers';
+import { StatusBar } from './Components';
 import styles from './styles';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -21,23 +21,9 @@ const App = () => (
   <Provider store={store}>
     <NativeRouter>
       <View style={styles.app}>
-
         <StatusBar />
-
-        <View style={styles.header}>
-          <Switch>
-            <Route path="/search" component={SearchBar} />
-            <Route path="/" component={TitleBar} />
-          </Switch>
-        </View>
-
-        <View style={styles.container}>
-          <Switch>
-            <Route path="/" component={PokemonList} exact />
-            <Route path="/pokemon/:id" component={PokemonDetail} />
-          </Switch>
-        </View>
-
+        <Header />
+        <Container />
       </View>
     </NativeRouter>
   </Provider>

@@ -6,9 +6,8 @@ import styles from './styles';
 
 const Header = ({ style }) => (
   <View style={[styles.header, style]}>
-    <AppTitle style={style.appTitle}>Pokédex</AppTitle>
-    <SearchBar style={style.searchBar} />
-    <Link to="/"><Text>Home</Text></Link>
+    <Link to="/"><AppTitle style={style.appTitle}>Pokédex</AppTitle></Link>
+    <Link to="/search"><Text>Search</Text></Link>
   </View>
 );
 

@@ -8,7 +8,7 @@ import { NativeRouter, Route, Switch } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
 import { Header, PokemonDetail, PokemonList } from './Containers';
-import { StatusBar } from './Components';
+import { SearchBar, StatusBar } from './Components';
 import styles from './styles';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -23,7 +23,13 @@ const App = () => (
       <View style={styles.app}>
 
         <StatusBar />
-        <Header style={styles.header} />
+
+        <View style={styles.header}>
+          <Switch>
+            <Route path="/search" component={SearchBar} />
+            <Route path="/" component={Header} />
+          </Switch>
+        </View>
 
         <View style={styles.container}>
           <Switch>

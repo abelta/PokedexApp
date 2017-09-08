@@ -1,23 +1,22 @@
 import React, { PureComponent } from 'react';
-import { Text } from 'react-native';
+import { Image } from 'react-native';
 import styles from './styles';
 
-class AppTitle extends PureComponent {
+class SearchButton extends PureComponent {
   setNativeProps(nativeProps) {
     this.root.setNativeProps(nativeProps);
   }
 
   render() {
     return (
-      <Text
+      <Image
         ref={component => this.root = component}
-        style={styles.appTitle}
+        style={styles.searchButton}
         {...this.props}
-      >
-        Pokédex
-      </Text>
+        source={require('./magnifying-glass.png')} // eslint-disable-line global-require
+      />
     );
   }
 }
 
-export default AppTitle;
+export default SearchButton;

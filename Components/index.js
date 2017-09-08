@@ -5,5 +5,6 @@ export { default as PokemonListEmpty } from './PokemonListEmpty';
 export { default as PokemonListItem } from './PokemonListItem';
 export { default as PokemonListLoadMore } from './PokemonListLoadMore';
 export { default as SearchBar } from './SearchBar';
+export { default as SearchButton } from './SearchButton';
 export { default as StatusBar } from './StatusBar';
 export { default as TitleBar } from './TitleBar';

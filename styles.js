@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   header: {
-
   },
   container: {
     backgroundColor: 'red',

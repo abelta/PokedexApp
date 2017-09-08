@@ -1,21 +1,22 @@
 import React from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { TextInput, View } from 'react-native';
 import { Link } from 'react-router-native';
+import { BackButton, ClearButton } from '../../Components';
 import styles from './styles';
 
-const SearchBar = ({ style }) => (
-  <View style={[styles.searchBar, style]}>
-    <Link to="/"><Text>Home</Text></Link>
-    <TextInput style={styles.input} />
+const SearchBar = () => (
+  <View style={styles.searchBar}>
+    <Link to="/" style={styles.back}><BackButton /></Link>
+    <TextInput
+      autoCorrect={false}
+      autoFocus
+      placeholder="Find Pokémon by name"
+      placeholderTextColor="lightgrey"
+      returnKeyType="search"
+      style={styles.input}
+    />
+    <View style={styles.clear}><ClearButton /></View>
   </View>
 );
-
-SearchBar.propTypes = {
-  style: View.propTypes.style,
-};
-
-SearchBar.defaultProps = {
-  style: {},
-};
 
 export default SearchBar;

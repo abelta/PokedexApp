@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Image } from 'react-native';
 import styles from './styles';
 
-class SearchButton extends PureComponent {
+class Search extends PureComponent {
   setNativeProps(nativeProps) {
     this.root.setNativeProps(nativeProps);
   }
@@ -11,7 +11,7 @@ class SearchButton extends PureComponent {
     return (
       <Image
         ref={component => this.root = component}
-        style={styles.searchButton}
+        style={styles.search}
         {...this.props}
         source={require('./magnifying-glass.png')} // eslint-disable-line global-require
       />
@@ -19,4 +19,4 @@ class SearchButton extends PureComponent {
   }
 }
 
-export default SearchButton;
+export default Search;

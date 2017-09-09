@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import { Image } from 'react-native';
 import styles from './styles';
 
-class BackButton extends PureComponent {
+class Back extends PureComponent {
   setNativeProps(nativeProps) {
     this.root.setNativeProps(nativeProps);
   }
@@ -11,7 +11,7 @@ class BackButton extends PureComponent {
     return (
       <Image
         ref={component => this.root = component}
-        style={styles.backButton}
+        style={styles.back}
         {...this.props}
         source={require('./left-arrow.png')} // eslint-disable-line global-require
       />
@@ -19,4 +19,4 @@ class BackButton extends PureComponent {
   }
 }
 
-export default BackButton;
+export default Back;

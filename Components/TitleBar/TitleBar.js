@@ -1,7 +1,8 @@
 import React from 'react';
-import { Text, View } from 'react-native';
+import { View } from 'react-native';
 import { Link } from 'react-router-native';
-import { AppTitle, SearchButton } from '../../Components';
+import { AppTitle } from '../../Components';
+import { Search as SearchButton } from '../../Components/Icons';
 import styles from './styles';
 
 const TitleBar = () => (

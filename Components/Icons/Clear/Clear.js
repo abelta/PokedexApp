@@ -2,21 +2,21 @@ import React, { PureComponent } from 'react';
 import { Image } from 'react-native';
 import styles from './styles';
 
-class ClearButton extends PureComponent {
-  setNativeProps(nativeProps) {
-    this.root.setNativeProps(nativeProps);
-  }
+class Clear extends PureComponent {
+  // setNativeProps(nativeProps) {
+  //   this.root.setNativeProps(nativeProps);
+  // }
 
   render() {
     return (
       <Image
-        ref={component => this.root = component}
-        style={styles.clearButton}
-        {...this.props}
+        // ref={component => this.root = component}
         source={require('./cancel.png')} // eslint-disable-line global-require
+        style={styles.clear}
+        // {...this.props}
       />
     );
   }
 }
 
-export default ClearButton;
+export default Clear;

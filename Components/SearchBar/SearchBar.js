@@ -1,12 +1,12 @@
 import React from 'react';
-import { TextInput, View } from 'react-native';
+import { TextInput, TouchableOpacity, View } from 'react-native';
 import { Link } from 'react-router-native';
-import { BackButton, ClearButton } from '../../Components';
+import { Back as BackButton, Clear as ClearButton } from '../../Components/Icons';
 import styles from './styles';
 
 const SearchBar = () => (
   <View style={styles.searchBar}>
-    <Link to="/" style={styles.back}><BackButton /></Link>
+    <Link to="/" style={styles.back}><TouchableOpacity><BackButton /></TouchableOpacity></Link>
     <TextInput
       autoCorrect={false}
       autoFocus
@@ -18,7 +18,14 @@ const SearchBar = () => (
       style={styles.input}
       underlineColorAndroid="transparent"
     />
-    <View style={styles.clear}><ClearButton /></View>
+    <View style={styles.clear}>
+      <TouchableOpacity
+        // style={[styles.clear, { height: 10, width: 20 }]}
+        onPress={() => { console.warn('PRESS') }}
+      >
+        <ClearButton />
+      </TouchableOpacity>
+    </View>
   </View>
 );
 

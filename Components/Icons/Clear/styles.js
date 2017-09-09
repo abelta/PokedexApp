@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  searchButton: {
+  clear: {
     height: 20,
     width: 20,
   },

@@ -1,22 +1,8 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import { Image } from 'react-native';
 import styles from './styles';
 
-class Clear extends PureComponent {
-  // setNativeProps(nativeProps) {
-  //   this.root.setNativeProps(nativeProps);
-  // }
-
-  render() {
-    return (
-      <Image
-        // ref={component => this.root = component}
-        source={require('./cancel.png')} // eslint-disable-line global-require
-        style={styles.clear}
-        // {...this.props}
-      />
-    );
-  }
-}
+// eslint-disable-next-line global-require
+const Clear = () => <Image source={require('./cancel.png')} style={styles.clear} />;
 
 export default Clear;

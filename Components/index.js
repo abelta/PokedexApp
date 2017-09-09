@@ -7,3 +7,5 @@ export { default as PokemonListLoadMore } from './PokemonListLoadMore';
 export { default as SearchBar } from './SearchBar';
 export { default as StatusBar } from './StatusBar';
 export { default as TitleBar } from './TitleBar';
+export { default as TouchableButton } from './TouchableButton';
+export { default as TouchableLink } from './TouchableLink';

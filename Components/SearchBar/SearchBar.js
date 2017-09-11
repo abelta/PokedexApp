@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { TextInput, View } from 'react-native';
+import { withRouter } from 'react-router-native';
 import { TouchableButton, TouchableLink } from '../../Components';
 import { Back as BackIcon, Clear as ClearIcon, Go as GoIcon } from '../../Components/Icons';
 import styles from './styles';
@@ -14,7 +16,7 @@ class SearchBar extends Component {
   }
 
   onChangeText(value) {
-    this.setState({ value });
+    this.setState({ value: value.toLowerCase() });
   }
 
   onClear() {
@@ -23,6 +25,9 @@ class SearchBar extends Component {
   }
 
   onSubmitEditing() {
+    const { history } = this.props;
+    const { value } = this.state;
+    history.push(`/pokemon/${value}`);
   }
 
   render() {
@@ -39,7 +44,7 @@ class SearchBar extends Component {
           multiline={false}
           onChangeText={this.onChangeText}
           onSubmitEditing={this.onSubmitEditing}
-          placeholder="Find Pokèmon by name"
+          placeholder="Find Pokémon by name"
           placeholderTextColor="lightgrey"
           returnKeyType="search"
           selectTextOnFocus
@@ -50,7 +55,7 @@ class SearchBar extends Component {
         <TouchableLink
           disabled={disabledButtons}
           style={styles.go}
-          to="/"
+          to={`/pokemon/${value}`}
         >
           {!disabledButtons && <GoIcon />}
         </TouchableLink>
@@ -66,4 +71,9 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+SearchBar.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  history: PropTypes.object.isRequired,
+};
+
+export default withRouter(SearchBar);

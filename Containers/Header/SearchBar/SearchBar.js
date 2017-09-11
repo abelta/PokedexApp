@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { TextInput, View } from 'react-native';
 import { withRouter } from 'react-router-native';
-import { TouchableButton, TouchableLink } from '../../Components';
-import { Back as BackIcon, Clear as ClearIcon, Go as GoIcon } from '../../Components/Icons';
+import { TouchableButton, TouchableLink } from '../../../Components';
+import { Back as BackIcon, Clear as ClearIcon, Go as GoIcon } from '../../../Components/Icons';
 import styles from './styles';
 
 class SearchBar extends Component {

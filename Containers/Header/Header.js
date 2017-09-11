@@ -1,7 +1,7 @@
 import React from 'react';
 import { View } from 'react-native';
 import { Route, Switch } from 'react-router-native';
-import { SearchBar, TitleBar } from '../../Components';
+import { SearchBar, TitleBar } from '.';
 import styles from './styles';
 
 const Header = () => (

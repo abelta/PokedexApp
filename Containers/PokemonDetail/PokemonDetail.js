@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
-import { ErrorModal, PokemonCard } from '../../Components';
+import { ErrorModal } from '../../Components';
+import { Card as PokemonCard } from '../../Components/Pokemon';
 
 class PokemonDetail extends Component {
   componentWillMount() {

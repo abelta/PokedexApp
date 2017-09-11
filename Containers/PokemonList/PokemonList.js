@@ -7,7 +7,8 @@ import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryType } from '../../PropTypes/Pokemon';
 import ErrorModal from '../../Components/ErrorModal';
-import { PokemonListEmpty, PokemonListItem } from '../../Components';
+import { ListEmpty as PokemonListEmpty, ListItem as PokemonListItem } from '../../Components/Pokemon';
+import styles from './styles';
 
 class PokemonList extends Component {
   constructor(props) {
@@ -29,18 +30,19 @@ class PokemonList extends Component {
     const { error, offset, pokemonIndex, loading } = this.props;
     const renderItem = ({ item }) => (<PokemonListItem key={item.name} pokemonEntry={item} />);
     return (
-      <View>
+      <View style={styles.pokemonList}>
         {loading && <ActivityIndicator />}
         {error && <ErrorModal>{error}</ErrorModal>}
         <FlatList
           data={pokemonIndex}
           extraData={{ offset }}
-          renderItem={renderItem}
           keyExtractor={item => item.name}
-          refreshing={loading}
-          onEndReachedThreshold={2}
-          onEndReached={this.onEndReached}
           ListEmptyComponent={<PokemonListEmpty />}
+          onEndReached={this.onEndReached}
+          onEndReachedThreshold={10}
+          refreshing={loading}
+          renderItem={renderItem}
+          style={styles.list}
         />
       </View>
     );

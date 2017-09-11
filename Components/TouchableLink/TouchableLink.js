@@ -1,9 +1,9 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-native';
 import { TouchableOpacity } from 'react-native';
 
-class TouchableLink extends PureComponent {
+class TouchableLink extends Component {
   constructor(props) {
     super(props);
     this.onPress = this.onPress.bind(this);
@@ -15,20 +15,31 @@ class TouchableLink extends PureComponent {
   }
 
   render() {
-    const { children, style } = this.props;
+    const { children, disabled, style } = this.props;
     return (
-      <TouchableOpacity onPress={this.onPress} style={style} >{children}</TouchableOpacity>
+      <TouchableOpacity
+        disabled={disabled}
+        onPress={this.onPress}
+        style={style}
+      >
+        {children}
+      </TouchableOpacity>
     );
   }
 }
 
 TouchableLink.propTypes = {
   children: PropTypes.node.isRequired,
+  disabled: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
   history: PropTypes.object.isRequired,
   // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
-  style: PropTypes.number,
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
   to: PropTypes.string.isRequired,
+};
+
+TouchableLink.defaultProps = {
+  disabled: false,
 };
 
 export default withRouter(TouchableLink);

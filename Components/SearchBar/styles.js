@@ -21,9 +21,16 @@ const styles = StyleSheet.create({
     paddingRight: 4,
     textDecorationLine: 'none',
   },
+  go: {
+    paddingLeft: 4,
+    paddingRight: 4,
+  },
   clear: {
     paddingLeft: 4,
     paddingRight: 4,
+  },
+  invisible: {
+    opacity: 0,
   },
 });
 

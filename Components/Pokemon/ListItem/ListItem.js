@@ -1,15 +1,13 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import { Link } from 'react-router-native';
+import { Text } from 'react-native';
+import { TouchableLink } from '../../../Components';
 import { pokemonEntryType } from '../../../PropTypes/Pokemon';
 import styles from './styles';
 
 const ListItem = ({ pokemonEntry }) => (
-  <View style={styles.listItem}>
-    <Link to={`/pokemon/${pokemonEntry.name}`}>
-      <Text style={styles.text}>{pokemonEntry.name}</Text>
-    </Link>
-  </View>
+  <TouchableLink style={styles.listItem} to={`/pokemon/${pokemonEntry.name}`}>
+    <Text style={styles.text}>{pokemonEntry.name}</Text>
+  </TouchableLink>
 );
 
 ListItem.propTypes = {

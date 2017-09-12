@@ -6,9 +6,11 @@ import styles from './styles';
 
 const TitleBar = () => (
   <View style={styles.titleBar}>
-    <TouchableLink style={styles.title} to="/">
-      <AppTitle>Pokédex</AppTitle>
-    </TouchableLink>
+    {/* <View style={styles.center}> */}
+      <TouchableLink style={styles.title} to="/">
+        <AppTitle />
+      </TouchableLink>
+    {/* </View> */}
     <TouchableLink style={styles.search} to="/search">
       <SearchIcon />
     </TouchableLink>

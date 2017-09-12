@@ -1,7 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Image } from 'react-native';
 import styles from './styles';
 
-const AppTitle = () => <Text style={styles.appTitle}>Pokédex</Text>;
-
+// eslint-disable-next-line global-require
+const AppTitle = () => <Image source={require('./pokedex-logo.png')} style={styles.appTitle} />;
 export default AppTitle;

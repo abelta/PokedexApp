@@ -5,9 +5,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
   },
+  empty: {
+    width: 25,
+  },
   title: {
-    alignSelf: 'center',
+    alignItems: 'center',
     flex: 1,
+    justifyContent: 'center',
     paddingLeft: 4,
     paddingRight: 4,
   },
@@ -15,6 +19,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     paddingLeft: 4,
     paddingRight: 4,
+    width: 25,
   },
 });
 

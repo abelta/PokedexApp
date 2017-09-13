@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, Text, View } from 'react-native';
+import { ActivityIndicator, View } from 'react-native';
 import { connect } from 'react-redux';
 import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
@@ -18,7 +18,6 @@ class PokemonDetail extends Component {
     const { error, loading, pokemon } = this.props;
     return (
       <View>
-        <Text>POKEMON DETAIL</Text>
         {loading && <ActivityIndicator size="large" />}
         {error && <ErrorModal>{error}</ErrorModal>}
         {pokemon && <PokemonCard pokemon={pokemon} />}

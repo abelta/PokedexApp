@@ -11,8 +11,6 @@ const styles = StyleSheet.create({
   },
   briefImages: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
   },
 });
 

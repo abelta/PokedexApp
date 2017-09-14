@@ -4,7 +4,7 @@ const styles = StyleSheet.create({
   bullet: {
     borderColor: 'black',
     flexDirection: 'row',
-    padding: 0,
+    padding: 2,
   },
   label: {
     backgroundColor: 'black',

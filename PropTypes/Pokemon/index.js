@@ -1,3 +1,4 @@
+export default from './pokemonShape';
 export { default as pokemonDetailParams } from './pokemonDetailParams';
-export { default as pokemonEntryType } from './pokemonEntryType';
-export { default as pokemonType } from './pokemonType';
+export { default as pokemonEntryShape } from './pokemonEntryShape';
+export { default as pokemonStatShape } from './pokemonStatShape';

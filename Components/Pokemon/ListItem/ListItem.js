@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text } from 'react-native';
 import { TouchableLink } from '../../../Components';
-import { pokemonEntryType } from '../../../PropTypes/Pokemon';
+import { pokemonEntryShape } from '../../../PropTypes/Pokemon';
 import styles from './styles';
 
 const ListItem = ({ pokemonEntry }) => (
@@ -11,7 +11,7 @@ const ListItem = ({ pokemonEntry }) => (
 );
 
 ListItem.propTypes = {
-  pokemonEntry: pokemonEntryType.isRequired,
+  pokemonEntry: pokemonEntryShape.isRequired,
 };
 
 export default ListItem;

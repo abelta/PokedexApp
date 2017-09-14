@@ -5,7 +5,7 @@ import { ActivityIndicator, FlatList, View } from 'react-native';
 import * as constants from '../../Constants';
 import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
-import { pokemonEntryType } from '../../PropTypes/Pokemon';
+import { pokemonEntryShape } from '../../PropTypes/Pokemon';
 import ErrorModal from '../../Components/ErrorModal';
 import { ListEmpty as PokemonListEmpty, ListItem as PokemonListItem } from '../../Components/Pokemon';
 import styles from './styles';
@@ -54,7 +54,7 @@ PokemonList.propTypes = {
   getList: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   offset: PropTypes.number.isRequired,
-  pokemonIndex: PropTypes.arrayOf(pokemonEntryType).isRequired,
+  pokemonIndex: PropTypes.arrayOf(pokemonEntryShape).isRequired,
 };
 
 const mapStateToProps = state => ({

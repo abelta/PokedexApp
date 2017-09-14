@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { ActivityIndicator, View } from 'react-native';
 import { connect } from 'react-redux';
-import { pokemonDetailParams, pokemonType } from '../../PropTypes/Pokemon';
+import pokemonShape, { pokemonDetailParams } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
 import { ErrorModal } from '../../Components';
@@ -31,7 +31,7 @@ PokemonDetail.propTypes = {
   getPokemon: PropTypes.func.isRequired,
   loading: PropTypes.bool.isRequired,
   match: pokemonDetailParams.isRequired,
-  pokemon: PropTypes.oneOfType([pokemonType, PropTypes.bool]).isRequired,
+  pokemon: PropTypes.oneOfType([pokemonShape, PropTypes.bool]).isRequired,
 };
 
 const mapStateToProps = (state, props) => ({

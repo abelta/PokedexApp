@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import { pokemonType } from '../../../PropTypes/Pokemon';
-import { Bullet, SpriteSwiper } from '.';
+import pokemonShape from '../../../PropTypes/Pokemon';
+import { Bullet, SpriteSwiper, StatsPanel } from '.';
 import styles from './styles';
 
 const Card = ({ pokemon }) => (
@@ -16,17 +16,7 @@ const Card = ({ pokemon }) => (
       <SpriteSwiper data={Object.values(pokemon.sprites)} style={styles.briefImages} />
     </View>
 
-    <View>
-      {
-        pokemon.stats.map(stat => (
-          <View key={stat.stat.name}>
-            <Text>{stat.stat.name}</Text>
-            <Text>{stat.effort}</Text>
-            <Text>{stat.baseStat}</Text>
-          </View>
-        ))
-      }
-    </View>
+    <StatsPanel data={pokemon.stats} />
 
     <View>
       {pokemon.types.map(type => <Text key={type.type.name}>{type.type.name}</Text>)}
@@ -39,7 +29,7 @@ const Card = ({ pokemon }) => (
 );
 
 Card.propTypes = {
-  pokemon: pokemonType.isRequired,
+  pokemon: pokemonShape.isRequired,
 };
 
 export default Card;

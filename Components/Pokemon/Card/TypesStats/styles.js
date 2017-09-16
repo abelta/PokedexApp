@@ -1,12 +1,9 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  statsPanel: {
+  typesStats: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
-    height: 120,
-    padding: 10,
-    margin: 10,
+    padding: 2,
   },
 });
 

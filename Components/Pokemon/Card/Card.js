@@ -1,7 +1,7 @@
 import React from 'react';
 import { ScrollView, Text, View } from 'react-native';
 import pokemonShape from '../../../PropTypes/Pokemon';
-import { Bullet, SpriteSwiper, StatsPanel } from '.';
+import { Bullet, SpriteSwiper, StatsPanel, TypesStats } from '.';
 import styles from './styles';
 
 const Card = ({ pokemon }) => (
@@ -12,15 +12,12 @@ const Card = ({ pokemon }) => (
         <Bullet label="Name" value={pokemon.name} />
         <Bullet label="Height" value={pokemon.height} />
         <Bullet label="Weight" value={pokemon.weight} />
+        <TypesStats data={pokemon.types} />
       </View>
       <SpriteSwiper data={Object.values(pokemon.sprites)} style={styles.briefImages} />
     </View>
 
     <StatsPanel data={pokemon.stats} />
-
-    <View>
-      {pokemon.types.map(type => <Text key={type.type.name}>{type.type.name}</Text>)}
-    </View>
 
     <View>
       {pokemon.moves.map(move => <Text key={move.move.name}>{move.move.name}</Text>)}

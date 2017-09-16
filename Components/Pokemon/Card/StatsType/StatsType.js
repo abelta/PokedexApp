@@ -5,7 +5,7 @@ import { pokemonTypeShape } from '../../../../PropTypes/Pokemon';
 import { BulletType } from '../.';
 import styles from './styles';
 
-const TypesStats = ({ data, style }) => (
+const StatsType = ({ data, style }) => (
   <View style={[styles.typesStats, style]}>
     {
       data.map(type => <BulletType key={type.type.name} value={type.type.name} />)
@@ -13,9 +13,9 @@ const TypesStats = ({ data, style }) => (
   </View>
 );
 
-TypesStats.propTypes = {
+StatsType.propTypes = {
   data: PropTypes.arrayOf(pokemonTypeShape).isRequired,
   style: PropTypes.number, // eslint-disable-line react/require-default-props
 };
 
-export default TypesStats;
+export default StatsType;

@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { ActivityIndicator, View } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import pokemonShape, { pokemonDetailParams } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
-import { ErrorModal } from '../../Components';
+import { ActivityIndicator, ErrorModal } from '../../Components';
 import { Card as PokemonCard } from '../../Components/Pokemon';
 import styles from './styles';
 
@@ -19,7 +19,7 @@ class PokemonDetail extends Component {
     const { error, loading, pokemon } = this.props;
     return (
       <View style={styles.pokemonDetail}>
-        {loading && <ActivityIndicator size="large" />}
+        {loading && <ActivityIndicator />}
         {error && <ErrorModal>{error}</ErrorModal>}
         {pokemon && <PokemonCard pokemon={pokemon} style={styles.card} />}
       </View>

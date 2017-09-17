@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { ActivityIndicator, FlatList, View } from 'react-native';
+import { FlatList, View } from 'react-native';
 import * as constants from '../../Constants';
 import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryShape } from '../../PropTypes/Pokemon';
 import ErrorModal from '../../Components/ErrorModal';
+import { ActivityIndicator } from '../../Components';
 import { ListEmpty as PokemonListEmpty, ListItem as PokemonListItem } from '../../Components/Pokemon';
 import styles from './styles';
 
@@ -31,7 +32,7 @@ class PokemonList extends Component {
     const renderItem = ({ item }) => (<PokemonListItem key={item.name} pokemonEntry={item} />);
     return (
       <View style={styles.pokemonList}>
-        {loading && <ActivityIndicator size="large" />}
+        {loading && <ActivityIndicator />}
         {error && <ErrorModal>{error}</ErrorModal>}
         <FlatList
           data={pokemonIndex}

@@ -4,9 +4,9 @@ const styles = StyleSheet.create({
   statColumn: {
     flex: 1,
     flexDirection: 'column',
-    height: 100,
-    justifyContent: 'flex-end',
-    margin: 8,
+    height: 120,
+    marginLeft: 5,
+    marginRight: 5,
   },
   filler: {
   },

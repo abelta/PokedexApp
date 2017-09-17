@@ -1,22 +1,19 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  bullet: {
-    backgroundColor: 'red',
-    borderColor: 'black',
-    flexDirection: 'row',
-    height: 20,
+  moveSet: {
+    flexDirection: 'column',
   },
-  label: {
+  title: {
     backgroundColor: 'black',
     color: 'white',
-    flex: 1,
+    padding: 2,
     paddingLeft: 10,
   },
-  value: {
-    backgroundColor: 'white',
-    color: 'black',
+  list: {
     flex: 1,
+  },
+  move: {
     paddingLeft: 10,
   },
 });

@@ -8,7 +8,9 @@ import styles from './styles';
 const StatsType = ({ data, style }) => (
   <View style={[styles.typesStats, style]}>
     {
-      data.map(type => <BulletType key={type.type.name} value={type.type.name} />)
+      data.map(type => (
+        <BulletType key={type.type.name} style={styles.bullet} value={type.type.name} />
+      ))
     }
   </View>
 );

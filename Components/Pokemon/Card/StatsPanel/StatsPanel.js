@@ -5,8 +5,8 @@ import { pokemonStatShape } from '../../../../PropTypes/Pokemon';
 import { StatColumn } from '../.';
 import styles from './styles';
 
-const StatsPanel = ({ data }) => (
-  <View style={styles.statsPanel}>
+const StatsPanel = ({ data, style }) => (
+  <View style={[styles.statsPanel, style]}>
     {
       data.map(stat => (
         <StatColumn key={stat.stat.name} label={stat.stat.name} value={stat.baseStat} />
@@ -17,6 +17,8 @@ const StatsPanel = ({ data }) => (
 
 StatsPanel.propTypes = {
   data: PropTypes.arrayOf(pokemonStatShape).isRequired,
+  // eslint-disable-next-line react/require-default-props, react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 export default StatsPanel;

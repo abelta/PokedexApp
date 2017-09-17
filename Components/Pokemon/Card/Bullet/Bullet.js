@@ -4,7 +4,7 @@ import { Text, View } from 'react-native';
 import styles from './styles';
 
 const Bullet = ({ label, style, value }) => (
-  <View style={[style, styles.bullet]}>
+  <View style={[styles.bullet, style]}>
     <Text style={styles.label}>{label}</Text>
     <Text style={styles.value}>{value}</Text>
   </View>

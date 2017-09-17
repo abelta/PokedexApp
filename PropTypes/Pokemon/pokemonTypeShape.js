@@ -1,6 +1,6 @@
 import PropTypes, { shape } from 'prop-types';
 
-const pokemonStatShape = shape({
+const pokemonTypeShape = shape({
   slot: PropTypes.number.isRequired,
   type: PropTypes.shape({
     url: PropTypes.string.isRequired,
@@ -8,4 +8,4 @@ const pokemonStatShape = shape({
   }).isRequired,
 });
 
-export default pokemonStatShape;
+export default pokemonTypeShape;

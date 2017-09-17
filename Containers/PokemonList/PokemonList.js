@@ -31,7 +31,7 @@ class PokemonList extends Component {
     const renderItem = ({ item }) => (<PokemonListItem key={item.name} pokemonEntry={item} />);
     return (
       <View style={styles.pokemonList}>
-        {loading && <ActivityIndicator />}
+        {loading && <ActivityIndicator size="large" />}
         {error && <ErrorModal>{error}</ErrorModal>}
         <FlatList
           data={pokemonIndex}

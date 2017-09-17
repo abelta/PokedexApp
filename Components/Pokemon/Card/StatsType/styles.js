@@ -5,6 +5,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     padding: 2,
   },
+  bullet: {
+    margin: 2,
+  },
 });
 
 export default styles;

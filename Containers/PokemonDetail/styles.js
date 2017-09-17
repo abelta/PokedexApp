@@ -1,13 +1,11 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  bulletType: {
+  pokemonDetail: {
     flex: 1,
   },
-  value: {
-    color: 'white',
+  card: {
     flex: 1,
-    textAlign: 'center',
   },
 });
 

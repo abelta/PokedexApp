@@ -7,6 +7,7 @@ import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
 import { ErrorModal } from '../../Components';
 import { Card as PokemonCard } from '../../Components/Pokemon';
+import styles from './styles';
 
 class PokemonDetail extends Component {
   componentWillMount() {
@@ -17,10 +18,10 @@ class PokemonDetail extends Component {
   render() {
     const { error, loading, pokemon } = this.props;
     return (
-      <View>
+      <View style={styles.pokemonDetail}>
         {loading && <ActivityIndicator size="large" />}
         {error && <ErrorModal>{error}</ErrorModal>}
-        {pokemon && <PokemonCard pokemon={pokemon} />}
+        {pokemon && <PokemonCard pokemon={pokemon} style={styles.card} />}
       </View>
     );
   }

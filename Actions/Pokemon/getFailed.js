@@ -1,8 +1,8 @@
 import * as types from '../actionTypes';
 
-const getFailed = ({ name, message }) => ({
+const getFailed = ({ name, error }) => ({
   type: types.POKEMON_GET_FAILED,
-  payload: { name, message },
+  payload: { name, error },
 });
 
 export default getFailed;

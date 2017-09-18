@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import pokemonShape, { pokemonDetailParams } from '../../PropTypes/Pokemon';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
-import { ActivityIndicator, ErrorModal } from '../../Components';
+import { ActivityIndicator, ErrorView } from '../../Components';
 import { Card as PokemonCard } from '../../Components/Pokemon';
 import styles from './styles';
 
@@ -20,7 +20,7 @@ class PokemonDetail extends Component {
     return (
       <View style={styles.pokemonDetail}>
         {loading && <ActivityIndicator />}
-        {error && <ErrorModal>{error}</ErrorModal>}
+        {error && <ErrorView>{error}</ErrorView>}
         {pokemon && <PokemonCard pokemon={pokemon} style={styles.card} />}
       </View>
     );

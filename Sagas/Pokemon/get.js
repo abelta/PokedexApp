@@ -9,8 +9,8 @@ const getSent = function* getSent(action) {
   try {
     const pokemon = camelcaseKeys(yield call(getApi, { name }), { deep: true });
     yield put(getSucceeded({ pokemon }));
-  } catch (e) {
-    yield put(getFailed({ name, message: e.message }));
+  } catch ({ message: error }) {
+    yield put(getFailed({ name, error }));
   }
 };
 

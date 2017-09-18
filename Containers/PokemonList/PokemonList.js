@@ -8,7 +8,8 @@ import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryShape } from '../../PropTypes/Pokemon';
 import ErrorModal from '../../Components/ErrorModal';
 import { ActivityIndicator } from '../../Components';
-import { ListEmpty as PokemonListEmpty, ListItem as PokemonListItem } from '../../Components/Pokemon';
+import { Empty } from '../../Components/List';
+import { ListItem } from '../../Components/Pokemon';
 import styles from './styles';
 
 class PokemonList extends Component {
@@ -29,7 +30,7 @@ class PokemonList extends Component {
 
   render() {
     const { error, offset, pokemonIndex, loading } = this.props;
-    const renderItem = ({ item }) => (<PokemonListItem key={item.name} pokemonEntry={item} />);
+    const renderItem = ({ item }) => (<ListItem key={item.name} pokemonEntry={item} />);
     return (
       <View style={styles.pokemonList}>
         {loading && <ActivityIndicator />}
@@ -38,7 +39,7 @@ class PokemonList extends Component {
           data={pokemonIndex}
           extraData={{ offset }}
           keyExtractor={item => item.name}
-          ListEmptyComponent={<PokemonListEmpty />}
+          ListEmptyComponent={<Empty />}
           onEndReached={this.onEndReached}
           onEndReachedThreshold={10}
           refreshing={loading}

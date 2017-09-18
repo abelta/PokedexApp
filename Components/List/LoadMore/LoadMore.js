@@ -2,14 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Text, TouchableHighlight } from 'react-native';
 
-const ListLoadMore = ({ onPress }) => (
+const LoadMore = ({ onPress }) => (
   <TouchableHighlight onPress={onPress}>
     <Text>Load more</Text>
   </TouchableHighlight>
 );
 
-ListLoadMore.propTypes = {
+LoadMore.propTypes = {
   onPress: PropTypes.func, // eslint-disable-line react/require-default-props
 };
 
-export default ListLoadMore;
+export default LoadMore;

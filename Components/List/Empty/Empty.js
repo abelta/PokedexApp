@@ -1,10 +1,10 @@
 import React from 'react';
 import { Text, View } from 'react-native';
 
-const ListEmpty = () => (
+const Empty = () => (
   <View>
     <Text>...loading data</Text>
   </View>
 );
 
-export default ListEmpty;
+export default Empty;

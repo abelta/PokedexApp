@@ -8,7 +8,7 @@ import { NativeRouter } from 'react-router-native';
 import reducers from './Reducers';
 import sagas from './Sagas';
 import { Header, Container } from './Containers';
-import { StatusBar } from './Components';
+import { BackHandler, StatusBar } from './Components';
 import styles from './styles';
 
 const sagaMiddleware = createSagaMiddleware();
@@ -21,6 +21,7 @@ const App = () => (
   <Provider store={store}>
     <NativeRouter>
       <View style={styles.app}>
+        <BackHandler />
         <StatusBar />
         <Header />
         <Container />

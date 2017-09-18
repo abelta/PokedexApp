@@ -9,12 +9,18 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   filler: {
+    bottom: 20,
+    position: 'absolute',
+    width: '100%',
   },
   label: {
     backgroundColor: 'lightgrey',
+    bottom: 0,
     height: 20,
     fontSize: 12,
+    position: 'absolute',
     textAlign: 'center',
+    width: '100%',
   },
 });
 

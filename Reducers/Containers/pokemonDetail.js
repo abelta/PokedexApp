@@ -7,6 +7,9 @@ const initialState = {
 
 const pokemonDetailReducer = (state = initialState, action) => {
   switch (action.type) {
+    case types.POKEMON_DETAIL_RESET: {
+      return initialState;
+    }
     case types.POKEMON_GET_SENT: {
       return { ...state, error: false, loading: true };
     }

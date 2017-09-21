@@ -23,7 +23,13 @@ const store = createStore(
 );
 
 sagaMiddleware.run(sagas);
-persistStore(store, { storage: AsyncStorage });
+persistStore(
+  store,
+  {
+    storage: AsyncStorage,
+    whitelist: ['entities.pokemon', 'entities.pokemonIndex'],
+  },
+);
 
 const App = () => (
   <Provider store={store}>

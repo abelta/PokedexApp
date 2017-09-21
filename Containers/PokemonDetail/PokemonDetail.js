@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { View } from 'react-native';
 import { connect } from 'react-redux';
 import pokemonShape, { pokemonDetailParams } from '../../PropTypes/Pokemon';
+import { reset } from '../../Actions/Containers/PokemonDetail';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
 import { ActivityIndicator, ErrorView } from '../../Components';
@@ -11,7 +12,8 @@ import styles from './styles';
 
 class PokemonDetail extends Component {
   componentWillMount() {
-    const { getPokemon, match: { params: { id: name } }, pokemon } = this.props;
+    const { getPokemon, match: { params: { id: name } }, pokemon, resetContainer } = this.props;
+    resetContainer();
     if (!pokemon) getPokemon(name);
   }
 
@@ -33,6 +35,7 @@ PokemonDetail.propTypes = {
   loading: PropTypes.bool.isRequired,
   match: pokemonDetailParams.isRequired,
   pokemon: PropTypes.oneOfType([pokemonShape, PropTypes.bool]).isRequired,
+  resetContainer: PropTypes.func.isRequired,
 };
 
 const mapStateToProps = (state, props) => ({
@@ -43,6 +46,7 @@ const mapStateToProps = (state, props) => ({
 
 const mapDispatchToProps = dispatch => ({
   getPokemon: name => dispatch(pokemonGetSent({ name })),
+  resetContainer: () => dispatch(reset()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonDetail);

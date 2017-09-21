@@ -1,5 +1,11 @@
 {
   "expo": {
-    "sdkVersion": "20.0.0"
+    "sdkVersion": "20.0.0",
+    "primaryColor": "#FFFFFF",
+    "icon": "./icon.png",
+    "loading": {
+      "icon": "./icon.png",
+      "backgroundColor": "#FFFFFF",
+    },
   }
 }

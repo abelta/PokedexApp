@@ -1,3 +1,4 @@
+export { default as ActivityBar } from './ActivityBar';
 export { default as ActivityIndicator } from './ActivityIndicator';
 export { default as AppTitle } from './AppTitle';
 export { default as BackHandler } from './BackHandler';

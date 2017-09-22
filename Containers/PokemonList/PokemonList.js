@@ -7,7 +7,7 @@ import { scrolledDown, scrolledUp } from '../../Actions/Containers/PokemonList';
 import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryShape } from '../../PropTypes/Pokemon';
-import { ActivityIndicator, ErrorModal } from '../../Components';
+import { ActivityBar, ActivityIndicator, ErrorModal } from '../../Components';
 import { Empty } from '../../Components/List';
 import { ListItem } from '../../Components/Pokemon';
 import styles from './styles';
@@ -50,7 +50,7 @@ class PokemonList extends Component {
     const renderItem = ({ item }) => (<ListItem key={item.name} pokemonEntry={item} />);
     return (
       <View style={styles.pokemonList}>
-        {loading && <ActivityIndicator />}
+        <ActivityBar active={loading} />
         {error && <ErrorModal>{error}</ErrorModal>}
         <FlatList
           data={pokemonIndex}

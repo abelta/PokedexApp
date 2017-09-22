@@ -1,9 +1,10 @@
 import { combineReducers } from 'redux';
-import { pokemonList, pokemonDetail } from './Containers';
+import { header, pokemonList, pokemonDetail } from './Containers';
 import { pokemon, pokemonIndex } from './Entities';
 
 const reducers = combineReducers({
   containers: combineReducers({
+    header,
     pokemonList,
     pokemonDetail,
   }),

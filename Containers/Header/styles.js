@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderColor: 'black',
     justifyContent: 'center',
-    padding: 10,
+    paddingLeft: 10,
+    paddingRight: 10,
   },
 });
 

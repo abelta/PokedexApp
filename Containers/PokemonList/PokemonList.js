@@ -7,7 +7,7 @@ import { scrolledDown, scrolledUp } from '../../Actions/Containers/PokemonList';
 import { listSent } from '../../Actions/Pokemon';
 import { selectPokemonIndex } from '../../Selectors/Pokemon';
 import { pokemonEntryShape } from '../../PropTypes/Pokemon';
-import { ActivityBar, ActivityIndicator, ErrorModal } from '../../Components';
+import { ActivityBar, ErrorModal } from '../../Components';
 import { Empty } from '../../Components/List';
 import { ListItem } from '../../Components/Pokemon';
 import styles from './styles';

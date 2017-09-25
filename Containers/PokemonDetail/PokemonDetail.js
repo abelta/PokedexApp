@@ -6,7 +6,7 @@ import pokemonShape, { pokemonDetailParams } from '../../PropTypes/Pokemon';
 import { reset } from '../../Actions/Containers/PokemonDetail';
 import { getSent as pokemonGetSent } from '../../Actions/Pokemon';
 import { selectPokemon } from '../../Selectors/Pokemon';
-import { ActivityIndicator, ErrorView } from '../../Components';
+import { ActivityIndicator, ErrorView, SlideView } from '../../Components';
 import { Card as PokemonCard } from '../../Components/Pokemon';
 import styles from './styles';
 
@@ -23,7 +23,12 @@ class PokemonDetail extends Component {
       <View style={styles.pokemonDetail}>
         {loading && <ActivityIndicator />}
         {error && <ErrorView>{error}</ErrorView>}
-        {pokemon && <PokemonCard pokemon={pokemon} style={styles.card} />}
+        {
+          pokemon &&
+          <SlideView style={{ flex: 1 }} toLeft>
+            <PokemonCard pokemon={pokemon} style={styles.card} />
+          </SlideView>
+        }
       </View>
     );
   }

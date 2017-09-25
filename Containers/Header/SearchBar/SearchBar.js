@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { TextInput, View } from 'react-native';
+import { TextInput } from 'react-native';
 import { withRouter } from 'react-router-native';
-import { TouchableButton, TouchableLink } from '../../../Components';
+import { SlideView, TouchableButton, TouchableLink } from '../../../Components';
 import { Back as BackIcon, Clear as ClearIcon, Go as GoIcon } from '../../../Components/Icons';
 import styles from './styles';
 
@@ -34,7 +34,7 @@ class SearchBar extends Component {
     const { value } = this.state;
     const disabledButtons = value.length === 0;
     return (
-      <View style={styles.searchBar}>
+      <SlideView style={styles.searchBar} toLeft >
         <TouchableLink style={styles.back} to="/" >
           <BackIcon />
         </TouchableLink>
@@ -66,7 +66,7 @@ class SearchBar extends Component {
         >
           {!disabledButtons && <ClearIcon />}
         </TouchableButton>
-      </View>
+      </SlideView>
     );
   }
 }

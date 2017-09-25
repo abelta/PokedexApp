@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import { AppTitle, TouchableLink } from '../../../Components';
+import { AppTitle, SlideView, TouchableLink } from '../../../Components';
 import { Search as SearchIcon } from '../../../Components/Icons';
 import styles from './styles';
 
 const TitleBar = () => (
-  <View style={styles.titleBar}>
+  <SlideView style={styles.titleBar} toRight >
     <View style={styles.empty} />
     <TouchableLink style={styles.title} to="/">
       <AppTitle />
@@ -13,7 +13,7 @@ const TitleBar = () => (
     <TouchableLink style={styles.search} to="/search">
       <SearchIcon />
     </TouchableLink>
-  </View>
+  </SlideView>
 );
 
 export default TitleBar;

@@ -1,5 +1,5 @@
-const typeColor = (value) => {
-  switch (value) {
+const typeColor = (type) => {
+  switch (type) {
     case 'normal': return '#A8A878';
     case 'fire': return '#F08030';
     case 'fighting': return '#C03028';

@@ -6,7 +6,7 @@ const statLabel = (label) => {
     case 'defense': return 'Def';
     case 'attack': return 'Atk';
     case 'hp': return 'HP';
-    default: return 'black';
+    default: return label;
   }
 };
 

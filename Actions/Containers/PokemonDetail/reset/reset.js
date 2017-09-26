@@ -1,4 +1,4 @@
-import * as types from '../../actionTypes';
+import * as types from '../../../actionTypes';
 
 const reset = () => ({ type: types.POKEMON_DETAIL_RESET });
 

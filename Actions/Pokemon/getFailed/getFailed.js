@@ -1,4 +1,4 @@
-import * as types from '../actionTypes';
+import * as types from '../../actionTypes';
 
 const getFailed = ({ name, error }) => ({
   type: types.POKEMON_GET_FAILED,

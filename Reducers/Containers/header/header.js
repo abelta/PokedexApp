@@ -1,4 +1,4 @@
-import * as types from '../../Actions/actionTypes';
+import * as types from '../../../Actions/actionTypes';
 
 const initialState = {
   movedDown: false,

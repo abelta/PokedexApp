@@ -33,13 +33,13 @@ TouchableLink.propTypes = {
   disabled: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
   history: PropTypes.object.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
-  style: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   to: PropTypes.string.isRequired,
 };
 
 TouchableLink.defaultProps = {
   disabled: false,
+  style: {},
 };
 
 export default withRouter(TouchableLink);

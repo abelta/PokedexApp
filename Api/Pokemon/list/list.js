@@ -1,5 +1,5 @@
-import * as constants from '../../Constants';
-import { checkStatus, parseJson } from '../../Helpers/Fetch';
+import * as constants from '../../../Constants';
+import { checkStatus, parseJson } from '../../../Helpers/Fetch';
 
 const list = ({ offset = 0 }) => (
   fetch(`http://pokeapi.co/api/v2/pokemon?limit=${constants.POKEMON_LIST_BASE_OFFSET}&offset=${offset}`)

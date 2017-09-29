@@ -19,8 +19,8 @@ const MoveSet = ({ data, style }) => (
 
 MoveSet.propTypes = {
   data: PropTypes.arrayOf(pokemonMoveShape).isRequired,
-  // eslint-disable-next-line react/require-default-props, react/forbid-prop-types
-  style: PropTypes.number,
+  // eslint-disable-next-line react/require-default-props
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 };
 
 export default MoveSet;

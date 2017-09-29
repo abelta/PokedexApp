@@ -4,9 +4,9 @@ import { Image } from 'react-native';
 import Swiper from 'react-native-swiper';
 import styles from './styles';
 
-const SpriteSwiper = ({ data }) => (
+const SpriteSwiper = ({ autoplay, data }) => (
   <Swiper
-    autoplay
+    autoplay={autoplay}
     showsPagination={false}
     style={styles.spriteSwiper}
   >
@@ -19,7 +19,12 @@ const SpriteSwiper = ({ data }) => (
 );
 
 SpriteSwiper.propTypes = {
+  autoplay: PropTypes.bool,
   data: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
+
+SpriteSwiper.defaultProps = {
+  autoplay: true,
 };
 
 export default SpriteSwiper;

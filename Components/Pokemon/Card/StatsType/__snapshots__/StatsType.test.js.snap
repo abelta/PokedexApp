@@ -1,0 +1,78 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatsType renders properly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "flexDirection": "row",
+        "padding": 2,
+      },
+      undefined,
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "margin": 2,
+        },
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "#A890F0",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+          "textAlign": "center",
+        }
+      }
+    >
+      flying
+    </Text>
+  </View>
+  <View
+    style={
+      Array [
+        Object {
+          "margin": 2,
+        },
+        Object {
+          "flex": 1,
+        },
+        Object {
+          "backgroundColor": "#F08030",
+        },
+      ]
+    }
+  >
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "white",
+          "flex": 1,
+          "textAlign": "center",
+        }
+      }
+    >
+      fire
+    </Text>
+  </View>
+</View>
+`;

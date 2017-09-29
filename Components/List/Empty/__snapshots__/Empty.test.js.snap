@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Empty renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "borderColor": "lightgrey",
+        "borderWidth": 0.5,
+        "height": 35,
+        "justifyContent": "center",
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "fontSize": 18,
+        "textAlign": "center",
+      }
+    }
+  >
+    ...loading data
+  </Text>
+</View>
+`;

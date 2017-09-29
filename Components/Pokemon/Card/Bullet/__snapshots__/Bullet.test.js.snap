@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bullet renders correctly 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "backgroundColor": "red",
+        "borderColor": "black",
+        "flexDirection": "row",
+        "height": 20,
+      },
+      undefined,
+    ]
+  }
+>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "black",
+        "color": "white",
+        "flex": 1,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    label
+  </Text>
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "white",
+        "color": "black",
+        "flex": 1,
+        "paddingLeft": 10,
+      }
+    }
+  >
+    4
+  </Text>
+</View>
+`;

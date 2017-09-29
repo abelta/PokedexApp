@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatColumn renders properly 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "flexDirection": "column",
+      "height": 120,
+      "marginLeft": 5,
+      "marginRight": 5,
+    }
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "bottom": 20,
+          "position": "absolute",
+          "width": "100%",
+        },
+        Object {
+          "backgroundColor": "black",
+          "height": 50,
+        },
+      ]
+    }
+  />
+  <Text
+    accessible={true}
+    allowFontScaling={true}
+    disabled={false}
+    ellipsizeMode="tail"
+    style={
+      Object {
+        "backgroundColor": "lightgrey",
+        "bottom": 0,
+        "fontSize": 12,
+        "height": 20,
+        "position": "absolute",
+        "textAlign": "center",
+        "width": "100%",
+      }
+    }
+  >
+    label
+  </Text>
+</View>
+`;

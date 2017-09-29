@@ -1,4 +1,4 @@
-import { camelcaseKeys, checkStatus, parseJson } from '../../Helpers/Fetch';
+import { camelcaseKeys, checkStatus, parseJson } from '../../../Helpers/Fetch';
 
 const get = ({ name }) => (
   fetch(`http://pokeapi.co/api/v2/pokemon/${name}`)

@@ -11,7 +11,8 @@ const BulletType = ({ style, value }) => (
 );
 
 BulletType.propTypes = {
-  style: PropTypes.number, // eslint-disable-line react/require-default-props
+  // eslint-disable-next-line react/require-default-props
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
   value: PropTypes.string.isRequired,
 };
 

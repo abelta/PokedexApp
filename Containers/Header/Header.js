@@ -55,7 +55,6 @@ Header.propTypes = {
 const mapStateToProps = state => ({
   movedDown: state.containers.header.movedDown,
   movedUp: state.containers.header.movedUp,
-  // reset: state.containers.header.reset,
 });
 
 export default withRouter(connect(mapStateToProps)(Header));

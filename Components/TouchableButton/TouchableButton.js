@@ -13,7 +13,7 @@ TouchableButton.propTypes = {
   disabled: PropTypes.bool,
   onPress: PropTypes.func.isRequired,
   // eslint-disable-next-line react/forbid-prop-types, react/require-default-props
-  style: PropTypes.oneOfType([PropTypes.number, PropTypes.array]),
+  style: PropTypes.oneOfType([PropTypes.number, PropTypes.object]),
 };
 
 TouchableButton.defaultProps = {

@@ -1,6 +1,7 @@
 # Pokédex Mobile App
 
 Pokédex is a demo project showcasing
+* [React Native](https://facebook.github.io/react-native/)
 * [Redux](http://redux.js.org/) integration
 * Ajax calls with [Redux-Saga](https://github.com/redux-saga/redux-saga)
 * Selectors and memoization with [Re-Reselect](https://github.com/toomuchdesign/re-reselect)
